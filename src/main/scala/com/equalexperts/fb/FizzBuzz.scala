@@ -1,11 +1,13 @@
+package com.equalexperts.fb
+
 case class FizzBuzz() {
 
   def generate(start: Int, end: Int): String = {
     if (start > end) s"Invalid range: $start is higher than $end"
-    else fizzBuzzList(start, end).mkString(" ")
+    else generateFizzBuzzList(start, end).mkString(" ")
   }
 
-  private def fizzBuzzList(start: Int, end: Int): List[String] = {
+  private def generateFizzBuzzList(start: Int, end: Int): List[String] = {
     (start to end map {
       case luckyNumber if luckyNumber.toString.contains("3") => "lucky"
       case nonLuckyNumber =>
